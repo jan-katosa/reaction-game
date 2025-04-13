@@ -1,4 +1,48 @@
-/* You can add global styles to this file, and also import other style files */
+@use '@angular/material' as mat;
+
+$main_text_color: white;
+$p_text_color: gray;
+$bg_color: #111;
 
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+    background-color: $bg_color;
+}
+
+
+.buttons {
+    width: 300px;
+    margin: 10px auto;
+}
+
+
+:root {
+    @include mat.button-overrides((
+        filled-container-color: green,
+        filled-label-text-color: $main_text_color,
+    ));
+}
+
+.container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: $bg_color;
+    border-radius: 8px;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+h1, h2 {
+    color: $main_text_color;
+}
+
+p {
+    color: $p_text_color;
+    font-size: 20px;
+    margin-bottom: 20px;
+}

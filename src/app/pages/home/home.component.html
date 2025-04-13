@@ -1,1 +1,19 @@
-<p>home works!</p>
+<div class="container">
+    <h1>Astro-Adventure</h1>
+    <h2>Start your journey!</h2>
+    <p>Become a Captain now!</p>
+    <p id="last">Danger and excitement await IIIINN SPAAACE!!!</p>
+
+    @if (!isLoggedIn) {
+      <p id="logged">First, you must log in to your account; or sign up, and make a new one!</p>
+      <button mat-flat-button [routerLink]="['/login']" class="buttons">Log in</button>
+      <button mat-flat-button [routerLink]="['/signup']" class="buttons">Sign up</button>
+    }
+    
+    @if (isLoggedIn) {
+      <p id="logged">Welcome, Captain!</p>
+      <button mat-flat-button [routerLink]="['/game']" class="buttons">Start Your Engines!</button>
+      <button mat-flat-button [routerLink]="['/profile']" class="buttons">My Profile</button>
+      <button mat-flat-button [routerLink]="['/leaderboard']" class="buttons">Leaderboard</button>
+    }
+</div>
